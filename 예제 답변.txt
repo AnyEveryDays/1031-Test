@@ -1,0 +1,23 @@
+[프로젝트 설명]
+이 프로젝트는 "애플리케이션 소스 검증하기" 훈련평가용 예제입니다.
+
+[포함된 의도적 오류]
+1. server.port=8080 충돌
+이미 사용중인 포트가 있는지 확인 있다면 강제로 종료
+Windows: 명령 프롬프트에서 netstat -ano | findstr :8080 명령어로 PID를 확인 후 taskkill /F /PID <PID> 명령어로 종료합니다.
+application.properties 에서 확인 포트번호 변경 또는 
+
+2. build.gradle 라이브러리 버전 불일치
+gradle-wrapper.properties
+ctrl+shift+o
+
+3. DummyService.java NullPointerException
+service 파일에 try catch 문 추가
+
+4. HelloController.java 불필요한 import 문
+ctrl + alt + o 로 제거 완료
+
+[학습 목표]
+- 오류를 콘솔 로그에서 파악하고 수정하기
+- 설정 및 코드 문제를 식별하고 해결하기
+- 정상 빌드 및 실행 확인하기
